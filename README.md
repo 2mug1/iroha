@@ -16,7 +16,18 @@
   <groupId>net.iamtakagi</groupId>
   <artifactId>iroha</artifactId>
   <version>1.0.0</version>
+  <scope>compile</scope>
 </dependency>
+```
+
+`build.gradle`
+```gradle
+repositories {
+  maven (url = "https://maven.pkg.github.com/2mug1/iroha")
+}
+dependencies {
+  implementation("net.iamtakagi:iroha:1.0.0")
+}
 ```
 
 ## LICENSE
