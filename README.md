@@ -8,7 +8,7 @@
 ```xml
  <repository>
   <id>github</id>
-  <name>GitHub Packages</name>
+  <name>iroha</name>
   <url>https://maven.pkg.github.com/2mug1/iroha</url>
 </repository>
 
