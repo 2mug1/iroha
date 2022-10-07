@@ -1,8 +1,9 @@
 package net.iamtakagi.iroha;
 
+import lombok.Getter;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import lombok.Getter;
 
 public class Duration {
 
