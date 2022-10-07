@@ -18,4 +18,21 @@ public class ChatHelper {
 		return new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(text).create());
 	}
 
+	public static String getProgressBar(int current, int max, int totalBars, String symbol, String completedColor, String notCompletedColor){
+		float percent = (float) current / max;
+		int progressBars = (int) ((int) totalBars * percent);
+		int leftOver = (totalBars - progressBars);
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(Style.translate(completedColor));
+		for (int i = 0; i < progressBars; i++) {
+			sb.append(symbol);
+		}
+		sb.append(Style.translate(notCompletedColor));
+		for (int i = 0; i < leftOver; i++) {
+			sb.append(symbol);
+		}
+		return sb.toString();
+	}
+
 }

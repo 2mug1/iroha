@@ -3,6 +3,8 @@ package net.iamtakagi.iroha;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class PlayerUtil {
 
@@ -22,5 +24,25 @@ public class PlayerUtil {
         player.getInventory().setContents(new ItemStack[36]);
         player.getActivePotionEffects().forEach(effect -> player.removePotionEffect(effect.getType()));
         player.updateInventory();
+    }
+
+    public static int getPotionEffectLevel(Player player, PotionEffectType potionEffectType) {
+        for (PotionEffect pe : player.getActivePotionEffects()) {
+            if (!pe.getType().getName().equals(potionEffectType.getName())) continue;
+            return pe.getAmplifier() + 1;
+        }
+        return 0;
+    }
+
+    public static boolean isFullInventory(Player player) {
+        return player.getInventory().firstEmpty() == -1;
+    }
+
+    public static void resetWalkSpeed(Player player) {
+        player.setWalkSpeed(0.2f);
+    }
+
+    public static void resetFlySpeed(Player player) {
+        player.setFlySpeed(0.1f);
     }
 }

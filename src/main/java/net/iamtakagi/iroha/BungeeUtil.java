@@ -14,4 +14,16 @@ public class BungeeUtil {
         output.writeUTF(serverName);
         player.sendPluginMessage(plugin, "BungeeCord", output.toByteArray());
     }
+
+    public static void sendAll(Plugin plugin, String serverName) {
+        ByteArrayDataOutput output = ByteStreams.newDataOutput();
+        output.writeUTF("Connect");
+        output.writeUTF(serverName);
+
+        for (Player player : plugin.getServer().getOnlinePlayers()) {
+            player.sendMessage(Style.AQUA + "Connecting to " + serverName + "...");
+            player.sendPluginMessage(plugin, "BungeeCord", output.toByteArray());
+        }
+    }
+
 }

@@ -1,13 +1,9 @@
 package net.iamtakagi.iroha;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.bukkit.ChatColor;
+
+import java.util.*;
 
 public class Style {
 
@@ -42,6 +38,12 @@ public class Style {
 	public static final String HORIZONTAL_SEPARATOR;
 	public static final String VERTICAL_SEPARATOR;
 	public static final String UNICODE_HEART;
+
+	public static final String ARROW_LEFT;
+
+	public static final String ARROW_RIGHT;
+
+	public static final String X;
 
 	static {
 		MAP = new HashMap<>();
@@ -82,6 +84,9 @@ public class Style {
 		HORIZONTAL_SEPARATOR = ChatColor.GRAY.toString() + ChatColor.STRIKETHROUGH.toString() + "------------------------------------------------";
 		VERTICAL_SEPARATOR = ChatColor.GRAY.toString() + StringEscapeUtils.unescapeJava("\u2503");
 		UNICODE_HEART = StringEscapeUtils.unescapeJava("\u2764");
+		ARROW_LEFT = StringEscapeUtils.unescapeJava("\u00AB");
+		ARROW_RIGHT = StringEscapeUtils.unescapeJava("\u00BB");
+		X = StringEscapeUtils.unescapeJava("\u2716");
 	}
 
 	public static Set<String> getColorNames() {
