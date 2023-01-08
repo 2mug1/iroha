@@ -6,7 +6,7 @@
 
 `pom.xml`
 ```xml
- <repository>
+<repository>
   <id>github</id>
   <name>iroha</name>
   <url>https://maven.pkg.github.com/2mug1/iroha</url>
