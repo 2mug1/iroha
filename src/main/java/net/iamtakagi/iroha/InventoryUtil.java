@@ -50,7 +50,7 @@ public class InventoryUtil {
             return "null";
         }
 
-        String isType = String.valueOf(item.getType().getId());
+        String isType = String.valueOf(item.getType().name());
         builder.append("t@").append(isType);
 
         if (item.getDurability() != 0) {
@@ -102,7 +102,7 @@ public class InventoryUtil {
 
             switch (s2) {
                 case "t": {
-                    item = new ItemStack(Material.getMaterial(String.valueOf(itemAttribute[1])));
+                    item = new ItemStack(Material.getMaterial(itemAttribute[1]));
                     meta = item.getItemMeta();
                     break;
                 }
