@@ -1,9 +1,11 @@
 package net.iamtakagi.iroha;
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -81,6 +83,14 @@ public class InventoryUtil {
             if (imeta.hasLore()) {
                 builder.append(":l@").append(imeta.getLore());
             }
+
+            if (imeta instanceof LeatherArmorMeta) {
+                LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) imeta;
+
+                if (leatherArmorMeta.getColor() != null) {
+                    builder.append(":lac@").append(leatherArmorMeta.getColor().asRGB());
+                }
+            }
         }
 
         return builder.toString();
@@ -130,6 +140,14 @@ public class InventoryUtil {
                 case "dn": {
                     if (meta != null) {
                         meta.setDisplayName(itemAttribute[1]);
+                        break;
+                    }
+                    break;
+                }
+                case "lac": {
+                    if (meta != null) {
+                        LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) meta;
+                        leatherArmorMeta.setColor(Color.fromRGB(Integer.parseInt(itemAttribute[1])));
                         break;
                     }
                     break;
