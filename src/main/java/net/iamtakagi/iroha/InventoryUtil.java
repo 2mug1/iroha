@@ -181,7 +181,7 @@ public class InventoryUtil {
             }
         }
 
-        if (meta != null && (meta.hasDisplayName() || meta.hasLore())) {
+        if (meta != null && (meta.hasDisplayName() || meta.hasLore() || meta instanceof LeatherArmorMeta)) {
             item.setItemMeta(meta);
         }
 
