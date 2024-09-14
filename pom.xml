@@ -71,7 +71,7 @@
             <artifactId>spigot</artifactId>
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-            </dependency>
+        </dependency>
         <dependency>
             <groupId>net.iamtakagi</groupId>
             <artifactId>kodaka</artifactId>
