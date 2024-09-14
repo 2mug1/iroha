@@ -146,8 +146,7 @@ public class InventoryUtil {
                 }
                 case "lac": {
                     if (meta != null) {
-                        LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) meta;
-                        leatherArmorMeta.setColor(Color.fromRGB(Integer.parseInt(itemAttribute[1])));
+                        ((LeatherArmorMeta) meta).setColor(Color.fromRGB(Integer.parseInt(itemAttribute[1])));
                         break;
                     }
                     break;
